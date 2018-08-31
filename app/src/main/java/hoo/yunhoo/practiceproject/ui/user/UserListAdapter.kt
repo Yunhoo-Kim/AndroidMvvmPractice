@@ -26,6 +26,11 @@ class UserListAdapter: RecyclerView.Adapter<UserListAdapter.ViewHolder>(){
         return if(::userList.isInitialized) userList.size else 0
     }
 
+    fun updateUserList(userList: List<User>){
+       this.userList = userList
+        notifyDataSetChanged()
+    }
+
     class ViewHolder(private val binding: ItemUserBinding): RecyclerView.ViewHolder(binding.root) {
         private val viewModel = UserViewModel()
         fun bind(user:User){

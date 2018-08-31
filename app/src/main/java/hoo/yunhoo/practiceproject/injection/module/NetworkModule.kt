@@ -6,7 +6,9 @@ import dagger.Module
 import dagger.Provides
 import dagger.Reusable
 import hoo.yunhoo.practiceproject.BuildConfig
+import hoo.yunhoo.practiceproject.network.AlbumApi
 import hoo.yunhoo.practiceproject.network.PostApi
+import hoo.yunhoo.practiceproject.network.UserApi
 import hoo.yunhoo.practiceproject.utils.BASE_URL
 import io.reactivex.schedulers.Schedulers
 import okhttp3.Interceptor
@@ -18,7 +20,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-import kotlin.math.log
 
 
 @Module
@@ -29,6 +30,20 @@ object NetworkModule {
     @JvmStatic
     internal fun providePostApi(retrofit: Retrofit): PostApi {
         return retrofit.create(PostApi::class.java)
+    }
+
+    @Provides
+    @Reusable
+    @JvmStatic
+    internal fun provideUserApi(retrofit: Retrofit): UserApi {
+        return retrofit.create(UserApi::class.java)
+    }
+
+    @Provides
+    @Reusable
+    @JvmStatic
+    internal fun provideAlbumApi(retrofit: Retrofit): AlbumApi{
+        return retrofit.create(AlbumApi::class.java)
     }
 
     @Provides

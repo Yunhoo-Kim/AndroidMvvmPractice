@@ -14,7 +14,8 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 
-class PostListViewModel(private val postDao: PostDao): BaseViewModel() {
+class PostListViewModel @Inject constructor(private val postDao: PostDao): BaseViewModel() {
+
     @Inject
     lateinit var postApi: PostApi
 

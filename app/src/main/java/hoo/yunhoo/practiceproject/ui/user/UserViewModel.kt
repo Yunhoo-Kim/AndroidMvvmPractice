@@ -16,4 +16,10 @@ class UserViewModel: BaseViewModel(){
         email.value = user.email
     }
 
+    fun getUserName():MutableLiveData<String>{
+        return this.user_name
+    }
+    fun getName():MutableLiveData<String> {
+        return this.name
+    }
 }
