@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
+import com.google.android.gms.ads.MobileAds
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import hoo.yunhoo.practiceproject.di.AppModule
@@ -27,6 +28,7 @@ class App: Application(), HasActivityInjector {
                 .networkModule(NetworkModule)
                 .build()
                 .inject(this)
+        MobileAds.initialize(this)
     }
 
     fun checkInHasNetwork(): Boolean {

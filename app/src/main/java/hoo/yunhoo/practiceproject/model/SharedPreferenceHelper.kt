@@ -5,7 +5,7 @@ import android.content.Context.MODE_PRIVATE
 import javax.inject.Inject
 import javax.inject.Named
 
-
+@Suppress("unused")
 class SharedPreferenceHelper @Inject constructor(@Named("appContext")private val context:Context){
     enum class KEY(val key:String) {
        ACCESS_TOKEN(key = "ACCESS_TOKEN")

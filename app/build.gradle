@@ -57,6 +57,10 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$dagger2_version"
     compileOnly "org.glassfish:javax.annotation:3.1.1"
 
+    // Ad
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.google.firebase:firebase-ads:15.0.1'
+
     // Support Design
     implementation "com.android.support:design:$android_support_version"
 
